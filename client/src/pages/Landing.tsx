@@ -1,100 +1,279 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapIcon, BookOpenIcon, UtensilsIcon, HomeIcon, HandHelpingIcon, AlertTriangleIcon, Star, Phone } from "lucide-react";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-saffron via-warm-orange to-deep-red text-white">
-      <div className="cultural-pattern absolute inset-0"></div>
-      <div className="relative z-10 min-h-screen flex flex-col">
-        {/* Header */}
-        <header className="p-6 text-center">
-          <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-yellow-50">
+      {/* Header */}
+      <header className="bg-white/95 backdrop-blur-sm border-b border-orange-200 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
+              <Star className="w-6 h-6 text-white fill-white" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">Girivalam Helper</h1>
+              <p className="text-sm text-gray-600">Tiruvannamalai Pilgrimage Guide</p>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold mb-2">Tiruvannamalai</h1>
-          <h2 className="text-2xl font-semibold mb-1">Girivalam Helper</h2>
-          <p className="text-lg opacity-90">திருவண்ணாமலை கிரிவலம்</p>
-        </header>
+          <Button 
+            variant="outline" 
+            className="border-orange-300 text-orange-700 hover:bg-orange-50 font-semibold"
+          >
+            தமிழ் | English
+          </Button>
+        </div>
+      </header>
 
-        {/* Hero Content */}
-        <div className="flex-1 flex flex-col justify-center px-6">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-4">Your Spiritual Journey Companion</h3>
-            <p className="text-base opacity-90 leading-relaxed mb-6">
-              Navigate the sacred Girivalam path, discover Annadhanam locations, 
-              book accommodations, and enhance your pilgrimage experience with 
-              spiritual audio guides in Tamil and English.
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto text-center max-w-5xl">
+          <div className="mb-8">
+            <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
+              <Star className="w-10 h-10 text-white fill-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Sacred Journey<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+                Awaits You
+              </span>
+            </h1>
+          </div>
+          <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-3xl mx-auto">
+            Navigate the holy 14 KM Girivalam path around sacred Arunachala Mountain 
+            with GPS guidance, find accommodation, food, and complete spiritual support.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Button 
+              size="lg" 
+              onClick={() => window.location.href = '/api/login'}
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-10 py-4 text-xl font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
+            >
+              🕉 Begin Sacred Journey
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-2 border-orange-300 text-orange-700 hover:bg-orange-50 px-10 py-4 text-xl font-semibold"
+            >
+              📖 Learn More
+            </Button>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600">14 KM</div>
+              <div className="text-gray-600 font-medium">Sacred Path</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600">8</div>
+              <div className="text-gray-600 font-medium">Holy Checkpoints</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600">50+</div>
+              <div className="text-gray-600 font-medium">Hotels & Stays</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-orange-600">24/7</div>
+              <div className="text-gray-600 font-medium">Support</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="py-20 px-4 bg-white/70 backdrop-blur-sm">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Complete Pilgrimage Experience
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Everything you need for a meaningful and safe Girivalam journey
             </p>
           </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <MapIcon className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-xl text-orange-800">GPS Navigation</CardTitle>
+                <CardDescription className="text-gray-600">14 KM Sacred Route</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Real-time GPS guidance with audio checkpoints in Tamil and English. 
+                  Never lose your way on the sacred Girivalam path.
+                </p>
+              </CardContent>
+            </Card>
 
-          {/* Feature highlights */}
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <Card className="bg-white bg-opacity-20 border-0">
-              <CardContent className="p-4 text-center">
-                <div className="w-8 h-8 bg-white bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2L13.09 8.26L22 9L14 14.74L15.18 22L12 18.27L8.82 22L10 14.74L2 9L10.91 8.26L12 2Z"/>
-                  </svg>
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <HomeIcon className="w-10 h-10 text-white" />
                 </div>
-                <p className="text-sm font-medium">14 KM Route</p>
-                <p className="text-xs opacity-80">GPS Navigation</p>
+                <CardTitle className="text-xl text-orange-800">Accommodation</CardTitle>
+                <CardDescription className="text-gray-600">Hotels & Dharamshalas</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Book from free dharamshalas to luxury hotels. Filter by price, 
+                  distance, and amenities near the temple.
+                </p>
               </CardContent>
             </Card>
-            
-            <Card className="bg-white bg-opacity-20 border-0">
-              <CardContent className="p-4 text-center">
-                <div className="w-8 h-8 bg-white bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
-                  </svg>
+
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <UtensilsIcon className="w-10 h-10 text-white" />
                 </div>
-                <p className="text-sm font-medium">Hotel Booking</p>
-                <p className="text-xs opacity-80">Dharamshala & Hotels</p>
+                <CardTitle className="text-xl text-orange-800">Annadhanam</CardTitle>
+                <CardDescription className="text-gray-600">Free Sacred Meals</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Locate blessed free meals (Annadhanam) and restaurants 
+                  with ratings, timings, and walking distances.
+                </p>
               </CardContent>
             </Card>
-            
-            <Card className="bg-white bg-opacity-20 border-0">
-              <CardContent className="p-4 text-center">
-                <div className="w-8 h-8 bg-white bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97L6.5 22h3l-.25-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5l1.5 6h2l-1.5-6H22V6h-6z"/>
-                  </svg>
+
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <BookOpenIcon className="w-10 h-10 text-white" />
                 </div>
-                <p className="text-sm font-medium">Free Annadhanam</p>
-                <p className="text-xs opacity-80">Food Locations</p>
+                <CardTitle className="text-xl text-orange-800">Audio Guide</CardTitle>
+                <CardDescription className="text-gray-600">Spiritual Stories</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Listen to temple legends, spiritual stories, and devotional 
+                  content in Tamil and English as you walk.
+                </p>
               </CardContent>
             </Card>
-            
-            <Card className="bg-white bg-opacity-20 border-0">
-              <CardContent className="p-4 text-center">
-                <div className="w-8 h-8 bg-white bg-opacity-30 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 1l3.5 5L22 7.5 19 10.5l.5 6.5L12 14l-7.5 3 .5-6.5L2 7.5 8.5 6z"/>
-                  </svg>
+
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <HandHelpingIcon className="w-10 h-10 text-white" />
                 </div>
-                <p className="text-sm font-medium">Audio Guide</p>
-                <p className="text-xs opacity-80">Tamil & English</p>
+                <CardTitle className="text-xl text-orange-800">Donations</CardTitle>
+                <CardDescription className="text-gray-600">Support Temple</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Support temple maintenance, sponsor free meals, and 
+                  contribute to pilgrim services with secure UPI payments.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-orange-100 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/90 backdrop-blur-sm">
+              <CardHeader className="text-center pb-4">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <AlertTriangleIcon className="w-10 h-10 text-white" />
+                </div>
+                <CardTitle className="text-xl text-orange-800">Emergency SOS</CardTitle>
+                <CardDescription className="text-gray-600">24/7 Safety</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 text-center leading-relaxed">
+                  Quick access to police, medical services, temple security, 
+                  and tourist helpline with location sharing.
+                </p>
               </CardContent>
             </Card>
           </div>
         </div>
+      </section>
 
-        {/* Login Button */}
-        <div className="p-6">
+      {/* Testimonials */}
+      <section className="py-20 px-4 bg-gradient-to-r from-orange-500 to-red-500">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-4xl font-bold text-white mb-12">
+            Trusted by Thousands of Pilgrims
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+              <p className="text-lg mb-4 italic">
+                "This app made my first Girivalam so peaceful. The GPS never failed, 
+                and finding free food was so easy!"
+              </p>
+              <div className="font-semibold">- Priya from Chennai</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
+              <p className="text-lg mb-4 italic">
+                "The audio stories enhanced my spiritual experience. 
+                Perfect companion for the sacred journey."
+              </p>
+              <div className="font-semibold">- Raj from Bangalore</div>
+            </div>
+          </div>
+          
           <Button 
+            size="lg" 
             onClick={() => window.location.href = '/api/login'}
-            className="w-full bg-white text-saffron hover:bg-gray-100 font-semibold py-3 text-lg"
-            size="lg"
+            className="bg-white text-orange-600 hover:bg-orange-50 px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-200"
           >
-            Begin Sacred Journey
+            🙏 Start Your Sacred Journey
           </Button>
-          <p className="text-center text-sm opacity-80 mt-4">
-            Sign in to access all features and personalize your pilgrimage experience
-          </p>
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12 px-4">
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                  <Star className="w-5 h-5 text-white fill-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white">Girivalam Helper</h3>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Your trusted companion for the sacred Tiruvannamalai pilgrimage. 
+                Built with devotion for spiritual seekers.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>Temple Timings</li>
+                <li>Girivalam Route</li>
+                <li>Emergency Contacts</li>
+                <li>Donation Options</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-4">Support</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li className="flex items-center gap-2">
+                  📧 support@girivalamhelper.com
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-4 h-4" /> +91 4175 234567
+                </li>
+                <li>🕐 24/7 Emergency Helpline</li>
+                <li>🏛️ Temple Information Center</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2024 Tiruvannamalai Girivalam Helper. Built with 🙏 for pilgrims worldwide.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
