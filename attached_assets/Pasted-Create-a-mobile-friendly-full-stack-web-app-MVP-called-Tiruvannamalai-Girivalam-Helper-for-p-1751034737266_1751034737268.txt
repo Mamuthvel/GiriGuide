@@ -1,0 +1,57 @@
+Create a mobile-friendly full-stack web app (MVP) called **"Tiruvannamalai Girivalam Helper"** for pilgrims visiting Tiruvannamalai for Girivalam and Arunachaleswarar Temple darshan.
+
+📱 The app should be built with:
+- Frontend: React (mobile-friendly/responsive)
+- Backend: Node.js with Express
+- Database: MongoDB
+- Authentication: JWT-based (via email or phone)
+- Map: Google Maps API or OpenStreetMap with GPS support
+- Optional: Host frontend and backend in a monorepo or separate folders
+
+👥 Target Audience:
+- Devotees visiting Tiruvannamalai
+- Tamil-speaking preferred, but also support English
+
+🔧 Build the MVP with the following features:
+
+1. **Girivalam Route Navigation**
+   - GPS map showing the safe Girivalam path
+   - Distance tracker + checkpoint alerts
+   - Audio guide for key temples in Tamil and English
+
+2. **Toilet + Water Stop Discovery**
+   - Map-based discovery of toilets and water points
+   - Paid toilet booking interface
+
+3. **Hotel / Dharamshala Booking**
+   - Listings with name, distance from temple, reviews, price
+   - Booking UI + simple storage in MongoDB
+
+4. **Food & Annadhanam Discovery**
+   - List verified free Annadhanam locations with times
+   - Show low-cost food stalls with ratings
+   - Simple rating system
+
+5. **Locker Booking**
+   - Allow users to see locker centers near temple
+   - Book time slots and store basic booking info
+
+6. **Live Temple Info**
+   - Temple queue update (manual field input)
+   - Puja schedule and live alerts section
+
+7. **Spiritual Audio Guide**
+   - Upload or link audio files for each key temple point
+   - Toggle between Tamil and English
+
+8. **Emergency SOS**
+   - Button to send emergency alert (log in backend for now)
+   - Show nearby help numbers
+
+9. **Donation Page**
+   - List trusted donation options (Annadhanam, temple)
+   - Users can donate via UPI or dummy payment link
+
+💡 Keep the code modular. Use `.env` for API keys and MongoDB URI. Create basic UI with placeholder images/data where needed. Prioritize working features over polish.
+
+Deliver a working MVP scaffold with seed data and the ability to run on Replit (preferably in a monorepo with both frontend and backend folders).
